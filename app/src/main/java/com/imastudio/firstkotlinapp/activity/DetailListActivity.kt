@@ -17,6 +17,7 @@ import com.imastudio.firstkotlinapp.helper.DataList.dataBuah.WB
 import kotlinx.android.synthetic.main.activity_detail_list.*
 
 class DetailListActivity : AppCompatActivity() {
+   //deklarasi
     var webbuah : String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
