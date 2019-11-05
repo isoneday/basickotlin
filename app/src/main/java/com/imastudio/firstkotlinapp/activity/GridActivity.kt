@@ -1,5 +1,6 @@
 package com.imastudio.firstkotlinapp.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.imastudio.firstkotlinapp.R
@@ -22,5 +23,17 @@ class GridActivity : AppCompatActivity() {
 
         val adapter = GridBuahAdapter(this,namaBuah,gambarBuah)
         gridbuah.adapter=adapter
+        gridbuah.setOnItemClickListener { adapterView, view, i, l ->
+            var intent = Intent(
+                this@GridActivity
+                , DetailListActivity::class.java
+            )
+            intent.putExtra(DataList.NB, namaBuah[i])
+            intent.putExtra(DataList.GB, gambarBuah[i])
+            intent.putExtra(DataList.DFB, deskFullBuah?.get(i))
+            intent.putExtra(DataList.SB, suaraBuah[i])
+            intent.putExtra(DataList.WB, webBuah[i])
+            startActivity(intent)
+        }
     }
 }
